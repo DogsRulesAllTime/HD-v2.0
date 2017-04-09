@@ -13,18 +13,9 @@
  //перенаправление на определенную страницу соответствующую доступу 
  function test(){
  if ($_SESSION['user']['dostup'] == 0) {
-   header( 'Location: 1.php');
+   header( 'Location: ../panelu.php?st=0');
  }elseif ($_SESSION['user']['dostup'] >= 1 || $_SESSION['user']['dostup'] <= 4) {
-header( 'Location: panel.php?st=0');
+header( 'Location: ../panel.php?st=0');
  }
 }
 ?>
-
-
-
-
-<!-- <div>
-<a href="otpravka.php">Создать заявку</a>
-<a href="proverka.php">Проверить заявку</a>
-
-</div> -->

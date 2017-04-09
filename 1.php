@@ -1,6 +1,6 @@
 <?php
 require_once 'includes/db.php';
-require_once 'includes/func.php';
+
 $id = $_GET['id'];
 
 //вывод информации по конкретной заявке

@@ -63,7 +63,7 @@ if (isset($_POST['login'],$_POST['psw'])) {
       
       $_SESSION['login'] = $login;
       $_SESSION['id'] = $ids;
-      header( 'Location: chekid.php');
+      header( 'Location: pages/chekid.php');
       echo "приветствую ВАС";
     }
   }

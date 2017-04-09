@@ -5,7 +5,12 @@ if (isset($_SESSION['id'])){
 echo "этот текст видят только зарегистрированыые пользователи";}
 else{
 echo "вы не можете прочитать скрытый текст";
-die();}
+$url ="http://localhost:8383/hd/"; //here you set the url
+$time_out = 3; //here you set how many seconds to untill refresh
+header("refresh: $time_out; url=$url");
+die();
+die();
+}
 
 
 //require_once 'includes/db.php'; //подключение соединения бд
@@ -47,7 +52,7 @@ if ($st == 0 ) {
   <title>Document</title>
 </head>
 <body>
-<form action="exit.php" method="POST">
+<form action="includes/exit.php" method="POST">
   <input type="submit" value= "Выход"" name="">
 </form>
 
