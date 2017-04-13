@@ -1,16 +1,7 @@
 <?php
 //защита от перехода
 require_once 'includes/db.php';
-if (isset($_SESSION['id'])){
-echo "этот текст видят только зарегистрированыые пользователи";}
-else{
-echo "вы не можете прочитать скрытый текст";
-$url ="http://localhost:8383/hd/"; //here you set the url
-$time_out = 3; //here you set how many seconds to untill refresh
-header("refresh: $time_out; url=$url");
-die();
-}
-
+protect($_SESSION['id']);
 
 
 $s=$_SESSION['id'];

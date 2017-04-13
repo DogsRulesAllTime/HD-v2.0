@@ -1,22 +1,8 @@
 <?php
 //защита от перехода
 require_once 'includes/db.php';
-if (isset($_SESSION['id'])){
-echo "этот текст видят только зарегистрированыые пользователи";}
-else{
-echo "вы не можете прочитать скрытый текст";
-$url ="http://localhost:8383/hd/"; //here you set the url
-$time_out = 3; //here you set how many seconds to untill refresh
-header("refresh: $time_out; url=$url");
-die();
-die();
-}
+protect($_SESSION['id']);
 
-
-// $id = $_SESSION['id'];
-
-// $result = mysqli_query($connect,"SELECT * FROM `users` WHERE id = $id ");
-// $actor = mysqli_fetch_assoc($result);
 
 
 $st = $_GET['st'];
@@ -35,7 +21,7 @@ $check = "";
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
@@ -69,7 +55,7 @@ $check = "";
             }elseif ($st == 2) {
                 $check = "green";
                 require_once 'pages/statuscheck.php';
-            }  
+            }
     ?>
 
 

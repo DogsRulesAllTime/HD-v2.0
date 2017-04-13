@@ -1,21 +1,23 @@
 <?php
-//Функция Подключения к бд 
+//Функция Подключения к бд
 function connectDB(){
 	$connect = mysqli_connect("localhost", "root", "", "baza");
 	mysqli_set_charset( $connect,'utf8');
 	return $connect;
 }
-//Функция выборки конкретики в базу 
-function selectONE($table = '`users`',$column='`id`',$value=3){
+//Функция выборки конкретики в базу
+function selectONE($table ,$column,$value){
 	$connect = connectDB();
 	$query= "SELECT * FROM ".$table." WHERE ".$column." = ".$value."";
+	//echo $query;
     $result = mysqli_query($connect , $query);
+		$GLOBALS['result'] = $result;
     return $row = mysqli_fetch_assoc($result);
 }
-//Функция Вставки в базу 
+//Функция Вставки в базу
 function insert($table ,$column,$value){
 	$connect = connectDB();
-	$query= "INSERT INTO ".$table."(".$column.")"." VALUES  (".$value.")"; 
+	$query= "INSERT INTO ".$table."(".$column.")"." VALUES  (".$value.")";
     $result = mysqli_query($connect , $query);
     echo mysqli_affected_rows($connect);
 }
@@ -35,9 +37,7 @@ function selectMANY($table){
 }
 
 
-$res=selectMANY("`zapiski`");
-while ($res = mysqli_fetch_assoc($GLOBALS['s'])){
-echo $res['id'],$res['tema'],$res['text'],$res['status'],'<br>' ;
-}
-
-
+//$res=selectMANY("`zapiski`");
+//while ($res = mysqli_fetch_assoc($GLOBALS['s'])){
+//echo $res['id'],$res['tema'],$res['text'],$res['status'],'<br>' ;
+//}
