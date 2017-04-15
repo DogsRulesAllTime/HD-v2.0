@@ -28,9 +28,8 @@ function insert($table ,$column,$value){
 
 
 //Функция выборки многого и запись в глобальную переменную
-function selectMANY($table){
+function selectMANY($query){
 	$connect = connectDB();
-	$query= "SELECT * FROM ".$table."";
     $result = mysqli_query($connect , $query);
     $GLOBALS['s'] = $result;
     return $row = mysqli_fetch_assoc($result);

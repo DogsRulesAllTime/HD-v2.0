@@ -3,24 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="frontend/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="frontend/css/bootstrap.css">
+
+   <!-- Подключаем удаленно jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+<script src="frontend/js/bootstrap.min.js"></script>
 </head>
 <body>
-   <form action="includes/exit.php" method="POST">
-  <input type="submit" value= "Выход" name="">
-</form>
-  <nav class="navbar navbar-default navbar-fixed-top">
+   
+  <nav class="navbar navbar-default navbar-top">
   <div class="container">
    <div class="row">
      
-       <div class="col-sm-4 text-center">
+       <div class="col-sm-3 text-center">
        <a href="panelu.php?st=0" class="btn btn-info <?php echo $main; ?>" role="button">Главная</a>
        </div>
-       <div class="col-sm-4 text-center">
+       <div class="col-sm-3 text-center">
        <a href="panelu.php?st=1" class="btn btn-info <?php echo $create; ?>" role="button">Создать заявку</a>
        </div>
-       <div class="col-sm-4 text-center">
+       <div class="col-sm-3 text-center">
        <a href="panelu.php?st=2" class="btn btn-info <?php echo $check; ?>" role="button">Проверить статус заявки</a>
+       </div>
+       <div class="col-sm-3 text-center">
+      <form action="includes/exit.php" method="POST">
+  <input  class="btn btn-danger" role="button" type="submit" value= "Выход" name="">
+</form>
        </div>
    </div>
   </div>
