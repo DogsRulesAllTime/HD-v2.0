@@ -12,7 +12,7 @@ if ($connect == false) {
 
 function reurl(){
     echo "вы не можете прочитать скрытый текст";
-    $url ="http://localhost/test/"; //here you set the url
+    $url ="http://localhost:8383/HD-v2.0/"; //here you set the url
     $time_out = 3; //here you set how many seconds to untill refresh
     header("refresh: $time_out; url=$url");
     die();
