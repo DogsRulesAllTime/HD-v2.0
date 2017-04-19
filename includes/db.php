@@ -1,6 +1,11 @@
 <?php
 session_start(); //старт сессис
 
+function connectDB(){
+	$connect = mysqli_connect("localhost", "root", "", "baza");
+	mysqli_set_charset( $connect,'utf8');
+	return $connect;
+}
 //подключение к бд
 $connect = mysqli_connect("localhost", "root", "", "baza");
 if ($connect == false) {
@@ -24,6 +29,29 @@ function protect($a){
     } else{
         reurl();
     }
+}
+
+function selectMANY($query){
+	$connect = connectDB();
+    $result = mysqli_query($connect , $query);
+    $rez = [];
+    while ($row = mysqli_fetch_assoc($result) ){
+        $rez[] = $row;
+    }
+    return $rez;
+}
+
+// $items = selectMANY("SELECT * FROM `account` " );
+// var_dump($items);
+// echo "<br>";
+// foreach($items as $str){
+//     echo $str['id'].'  '.$str['login'].'<br>';
+// }
+function insert($query){
+    $connect = connectDB();
+    
+    $result = mysqli_query($connect , $query);
+    
 }
 
 ?>

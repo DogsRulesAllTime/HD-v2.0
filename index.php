@@ -34,4 +34,5 @@ if (isset($_POST['login'],$_POST['psw'])) {
       echo "приветствую ВАС";
     }
   }
+
 ?>
